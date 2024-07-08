@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvkfo2xae4o87"]
+
+[ext_resource type="Script" path="res://Scripts/web.gd" id="1_pjxdu"]
+
+[node name="Web" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_pjxdu")
+
+[node name="Marker2D" type="Marker2D" parent="."]

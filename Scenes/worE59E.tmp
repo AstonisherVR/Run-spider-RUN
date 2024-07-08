@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjpicoaf8pr42"]
+
+[ext_resource type="Texture2D" uid="uid://b00bkr4lb1jic" path="res://2D Sprites/Placeholder Web.png" id="1_a04fj"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_lltti"]
+[ext_resource type="PackedScene" uid="uid://wi83ybvufmp7" path="res://Scenes/spider.tscn" id="1_p4icg"]
+[ext_resource type="PackedScene" uid="uid://cg3uapeu3roh7" path="res://Scenes/web.tscn" id="3_207gj"]
+
+[node name="World" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_lltti")
+
+[node name="Spider" parent="." instance=ExtResource("1_p4icg")]
+
+[node name="Web" parent="." instance=ExtResource("3_207gj")]
+
+[node name="PlaceholderWeb" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_a04fj")
