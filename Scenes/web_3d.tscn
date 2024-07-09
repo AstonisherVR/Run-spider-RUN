@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ql66ox6ujrnu"]
+
+[ext_resource type="Script" path="res://Scripts/web_3d.gd" id="1_v1ibl"]
+
+[sub_resource type="PlaceholderTexture3D" id="PlaceholderTexture3D_g1axe"]
+
+[node name="Web3D" type="Node3D" node_paths=PackedStringArray("center_marker")]
+script = ExtResource("1_v1ibl")
+center_marker = NodePath("Marker3D")
+web_texture = SubResource("PlaceholderTexture3D_g1axe")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.933506, 8.47843)

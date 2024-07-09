@@ -1,4 +1,18 @@
-[gd_scene format=3 uid="uid://bjpicoaf8pr42"]
+[gd_scene load_steps=5 format=3 uid="uid://bjpicoaf8pr42"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_xy4vl"]
+[ext_resource type="PackedScene" uid="uid://wi83ybvufmp7" path="res://Scenes/spider.tscn" id="2_ms3tj"]
+[ext_resource type="PackedScene" uid="uid://bvkfo2xae4o87" path="res://Scenes/web.tscn" id="2_shngd"]
+[ext_resource type="PackedScene" uid="uid://bfnx6je3nw17k" path="res://Scenes/fly.tscn" id="3_eueus"]
 
 [node name="World" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_xy4vl")
+
+[node name="Web" parent="." instance=ExtResource("2_shngd")]
+script = null
+
+[node name="Spider" parent="." instance=ExtResource("2_ms3tj")]
+
+[node name="Fly" parent="." instance=ExtResource("3_eueus")]
+position = Vector2(-88, 0)

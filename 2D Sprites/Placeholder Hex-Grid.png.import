@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvmg6gxfue7ek"
-path="res://.godot/imported/Line Particle.png-63b260107ee1de556635e5a530a0a1f0.ctex"
+uid="uid://dwfothn3137oc"
+path="res://.godot/imported/Placeholder Hex-Grid.png-ab5b6ae7e99e1384e45fe91a02811b2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Sprites/Line Particle.png"
-dest_files=["res://.godot/imported/Line Particle.png-63b260107ee1de556635e5a530a0a1f0.ctex"]
+source_file="res://2D Sprites/Placeholder Hex-Grid.png"
+dest_files=["res://.godot/imported/Placeholder Hex-Grid.png-ab5b6ae7e99e1384e45fe91a02811b2a.ctex"]
 
 [params]
 
