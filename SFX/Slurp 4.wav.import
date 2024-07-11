@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d2s3gbrcnyuph"
+path="res://.godot/imported/Slurp 4.wav-46d8ab65fda410e8a070a77c9474ade4.sample"
+
+[deps]
+
+source_file="res://SFX/Slurp 4.wav"
+dest_files=["res://.godot/imported/Slurp 4.wav-46d8ab65fda410e8a070a77c9474ade4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

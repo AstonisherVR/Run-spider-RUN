@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvmg6gxfue7ek"
-path="res://.godot/imported/Placeholder line.png-6820d5b14fef184d44eac48af7716799.ctex"
+uid="uid://ccfsf313c6b1g"
+path="res://.godot/imported/Placeholder Hexagon.png-79e3c23a2ab1643ad1d5a56958fa1915.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Sprites/Placeholder line.png"
-dest_files=["res://.godot/imported/Placeholder line.png-6820d5b14fef184d44eac48af7716799.ctex"]
+source_file="res://2D Sprites/Placeholder Hexagon.png"
+dest_files=["res://.godot/imported/Placeholder Hexagon.png-79e3c23a2ab1643ad1d5a56958fa1915.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

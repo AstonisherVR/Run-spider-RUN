@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvmg6gxfue7ek"
-path="res://.godot/imported/Placeholder line.png-6820d5b14fef184d44eac48af7716799.ctex"
+uid="uid://c8ykfe5trqxlb"
+path="res://.godot/imported/Drumstick.png-58251def5c3602cf7b314178d5fbde10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Sprites/Placeholder line.png"
-dest_files=["res://.godot/imported/Placeholder line.png-6820d5b14fef184d44eac48af7716799.ctex"]
+source_file="res://2D Sprites/Drumstick.png"
+dest_files=["res://.godot/imported/Drumstick.png-58251def5c3602cf7b314178d5fbde10.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

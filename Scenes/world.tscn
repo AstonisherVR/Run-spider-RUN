@@ -1,18 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjpicoaf8pr42"]
+[gd_scene load_steps=4 format=3 uid="uid://dfed84fim6qcd"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_xy4vl"]
-[ext_resource type="PackedScene" uid="uid://wi83ybvufmp7" path="res://Scenes/spider.tscn" id="2_ms3tj"]
-[ext_resource type="PackedScene" uid="uid://bvkfo2xae4o87" path="res://Scenes/web.tscn" id="2_shngd"]
-[ext_resource type="PackedScene" uid="uid://bfnx6je3nw17k" path="res://Scenes/fly.tscn" id="3_eueus"]
+[ext_resource type="PackedScene" uid="uid://bkpt4wyhhxw1l" path="res://Scenes/spider.tscn" id="2_ms3tj"]
+[ext_resource type="PackedScene" uid="uid://bcjbka5ixacfu" path="res://Scenes/fly.tscn" id="3_eueus"]
 
 [node name="World" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_xy4vl")
 
-[node name="Web" parent="." instance=ExtResource("2_shngd")]
-script = null
-
 [node name="Spider" parent="." instance=ExtResource("2_ms3tj")]
 
 [node name="Fly" parent="." instance=ExtResource("3_eueus")]
 position = Vector2(-88, 0)
+
+[connection signal="eaten" from="Fly" to="Spider" method="_on_fly_eaten"]
+[connection signal="eaten" from="Fly" to="Fly" method="_on_eaten"]

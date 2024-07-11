@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvmg6gxfue7ek"
-path="res://.godot/imported/Placeholder line.png-6820d5b14fef184d44eac48af7716799.ctex"
+uid="uid://chxicl8igbxjq"
+path="res://.godot/imported/Placeholder web squares.png-8d95f6fc45eca041e110aded12060efd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://2D Sprites/Placeholder line.png"
-dest_files=["res://.godot/imported/Placeholder line.png-6820d5b14fef184d44eac48af7716799.ctex"]
+source_file="res://2D Sprites/Placeholder web squares.png"
+dest_files=["res://.godot/imported/Placeholder web squares.png-8d95f6fc45eca041e110aded12060efd.ctex"]
 
 [params]
 
