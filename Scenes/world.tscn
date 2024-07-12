@@ -1,17 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfed84fim6qcd"]
+[gd_scene load_steps=5 format=3 uid="uid://dfed84fim6qcd"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_xy4vl"]
 [ext_resource type="PackedScene" uid="uid://bkpt4wyhhxw1l" path="res://Scenes/spider.tscn" id="2_ms3tj"]
 [ext_resource type="PackedScene" uid="uid://bcjbka5ixacfu" path="res://Scenes/fly.tscn" id="3_eueus"]
+[ext_resource type="PackedScene" uid="uid://vospbquhcrju" path="res://Scenes/square_web.tscn" id="4_ojkex"]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" node_paths=PackedStringArray("fly", "spider", "spawn_fly_timer")]
 texture_filter = 1
 script = ExtResource("1_xy4vl")
+fly = NodePath("Fly")
+spider = NodePath("Spider")
+spawn_fly_timer = NodePath("Spawn Fly Timer")
+
+[node name="Square Web" parent="." instance=ExtResource("4_ojkex")]
 
 [node name="Spider" parent="." instance=ExtResource("2_ms3tj")]
 
 [node name="Fly" parent="." instance=ExtResource("3_eueus")]
-position = Vector2(-88, 0)
+position = Vector2(-128, 0)
+
+[node name="Spawn Fly Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 3.0
+one_shot = true
 
 [connection signal="eaten" from="Fly" to="Spider" method="_on_fly_eaten"]
 [connection signal="eaten" from="Fly" to="Fly" method="_on_eaten"]
+[connection signal="timeout" from="Spawn Fly Timer" to="." method="_on_spawn_fly_timer_timeout"]

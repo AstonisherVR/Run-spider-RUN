@@ -8,16 +8,17 @@ size = Vector2(32, 32)
 
 [node name="Fly" type="Area2D"]
 light_mask = 2
+scale = Vector2(0.75, 0.75)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_t2jkm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_glthj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 9.53674e-07)
 scale = Vector2(0.122549, 0.122549)
 texture = ExtResource("2_2f868")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_glthj")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

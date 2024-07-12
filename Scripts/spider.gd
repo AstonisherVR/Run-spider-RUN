@@ -5,10 +5,12 @@ extends CharacterBody2D
 @export var poison_timer: Timer
 @export var hunger_bar: ProgressBar 
 @export var poison_bar: ProgressBar
+@export var slurp_audio: AudioStreamPlayer
 #@export var hunger_label: Label
 #@export var poison_label: Label
 @export var speed: float = 400.0
 
+var slurp_sounds: Array = [preload("res://SFX/Slurp 1.wav"), preload("res://SFX/Slurp 2.wav"), preload("res://SFX/Slurp 3.wav"), preload("res://SFX/Slurp 4.wav")]
 var next_position: Vector2
 var moving: bool = false
 var position_coords: Vector2 = Vector2.ZERO
@@ -26,19 +28,19 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if not moving:
 		if event.is_action_pressed("Left"):
-			position_coords.x -= 128
+			position_coords.x -= 64
 			spider_sprite.rotation_degrees = -90
 			start_moving()
 		elif event.is_action_pressed("Right"):
-			position_coords.x += 128
+			position_coords.x += 64
 			spider_sprite.rotation_degrees = 90
 			start_moving()
 		elif event.is_action_pressed("Up"):
-			position_coords.y -= 128
+			position_coords.y -= 64
 			spider_sprite.rotation_degrees = 0
 			start_moving()
 		elif event.is_action_pressed("Down"):
-			position_coords.y += 128
+			position_coords.y += 64
 			spider_sprite.rotation_degrees = 180
 			start_moving()
 
@@ -63,6 +65,9 @@ func _on_poison_timer_timeout() -> void:
 	poison_timer.start()
 
 func _on_fly_eaten() -> void:
+	slurp_audio.stream = slurp_sounds[randi_range(0, 3)]
+	slurp_audio.volume_db = -20
+	slurp_audio.play()
 	if hunger_bar.value + 3 > 100:
 		hunger_bar.value = 100
 	else:

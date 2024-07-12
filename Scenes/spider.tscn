@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkpt4wyhhxw1l"]
+[gd_scene load_steps=6 format=3 uid="uid://bkpt4wyhhxw1l"]
 
 [ext_resource type="Script" path="res://Scripts/spider.gd" id="1_nev2d"]
 [ext_resource type="Texture2D" uid="uid://lmmgyt2p1145" path="res://2D Sprites/Placeholder Spider.png" id="2_4sva2"]
+[ext_resource type="PackedScene" uid="uid://cgxw78s1p337t" path="res://Scenes/UI Scenes/ui.tscn" id="3_rlhom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nywgn"]
-size = Vector2(32, 32)
+size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnyni"]
-size = Vector2(48, 48)
+size = Vector2(32, 32)
 
-[node name="Spider" type="CharacterBody2D" node_paths=PackedStringArray("spider_sprite", "hunger_timer", "poison_timer", "hunger_bar", "poison_bar")]
+[node name="Spider" type="CharacterBody2D" node_paths=PackedStringArray("spider_sprite", "hunger_timer", "poison_timer", "hunger_bar", "poison_bar", "slurp_audio")]
 top_level = true
 texture_filter = 1
 collision_layer = 3
@@ -17,8 +18,9 @@ script = ExtResource("1_nev2d")
 spider_sprite = NodePath("Spider Sprite")
 hunger_timer = NodePath("Hunger Timer")
 poison_timer = NodePath("Poison Timer")
-hunger_bar = NodePath("")
-poison_bar = NodePath("")
+hunger_bar = NodePath("UI/VBoxContainer/Hunger Bar")
+poison_bar = NodePath("UI/VBoxContainer/Poison Bar")
+slurp_audio = NodePath("Slurp Audio")
 speed = 600.0
 
 [node name="Hurt Area" type="Area2D" parent="."]
@@ -30,9 +32,9 @@ shape = SubResource("RectangleShape2D_nywgn")
 shape = SubResource("RectangleShape2D_wnyni")
 
 [node name="Spider Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.24, 0.32)
+position = Vector2(0, 7.15256e-07)
+scale = Vector2(0.18, 0.22)
 texture = ExtResource("2_4sva2")
-metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -44,5 +46,11 @@ one_shot = true
 process_callback = 0
 one_shot = true
 
+[node name="UI" parent="." instance=ExtResource("3_rlhom")]
+
+[node name="Slurp Audio" type="AudioStreamPlayer" parent="."]
+
 [connection signal="timeout" from="Poison Timer" to="." method="_on_poison_timer_timeout"]
 [connection signal="timeout" from="Hunger Timer" to="." method="_on_hunger_timer_timeout"]
+
+[editable path="UI"]
