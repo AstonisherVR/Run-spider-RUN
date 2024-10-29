@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var hunger_bar: ProgressBar 
 @export var poison_bar: ProgressBar
 @export var slurp_audio: AudioStreamPlayer
+@export var flies_eaten_label: Label
 #@export var hunger_label: Label
 #@export var poison_label: Label
 @export var speed: float = 400.0
@@ -18,11 +19,14 @@ const STARTING_HUNGER_VALUE: int = 100
 const STARTING_POISON_VALUE: int = 0
 
 func _ready():
+	flies_eaten_label.text = flies_eaten_label.text + str(Gloabals.flies_eaten)
 	hunger_bar.value = STARTING_HUNGER_VALUE
 	poison_bar.value = STARTING_POISON_VALUE
 	hunger_timer.start()
 
 func _physics_process(delta: float) -> void:
+	if hunger_bar.value <= 0:
+		get_tree().change_scene_to_file("res://Scenes/UI Scenes/game_over.tscn")
 	move(delta)
 
 func _input(event: InputEvent) -> void:
@@ -57,7 +61,7 @@ func move(delta: float) -> void:
 
 func _on_hunger_timer_timeout() -> void:
 	hunger_timer.wait_time = randf_range(0.25, 1)
-	hunger_bar.value -= 1
+	hunger_bar.value -= 5
 	hunger_timer.start()
 
 func _on_poison_timer_timeout() -> void: 
@@ -65,8 +69,129 @@ func _on_poison_timer_timeout() -> void:
 	poison_timer.start()
 
 func _on_fly_eaten() -> void:
+	Gloabals.flies_eaten += 1
+	flies_eaten_label.text = flies_eaten_label.text + str(Gloabals.flies_eaten)
 	slurp_audio.stream = slurp_sounds[randi_range(0, 3)]
-	slurp_audio.volume_db = -20
+	slurp_audio.volume_db = -10
+	slurp_audio.play()
+	if hunger_bar.value + 3 > 100:
+		hunger_bar.value = 100
+	else:
+		hunger_bar.value += 3
+
+func _on_fly_12_eaten() -> void:
+	Gloabals.flies_eaten += 1
+	flies_eaten_label.text = flies_eaten_label.text + str(Gloabals.flies_eaten)
+	slurp_audio.stream = slurp_sounds[randi_range(0, 3)]
+	slurp_audio.volume_db = -10
+	slurp_audio.play()
+	if hunger_bar.value + 3 > 100:
+		hunger_bar.value = 100
+	else:
+		hunger_bar.value += 3
+
+func _on_fly_2_eaten() -> void:
+	Gloabals.flies_eaten += 1
+	flies_eaten_label.text = flies_eaten_label.text + str(Gloabals.flies_eaten)
+	slurp_audio.stream = slurp_sounds[randi_range(0, 3)]
+	slurp_audio.volume_db = -10
+	slurp_audio.play()
+	if hunger_bar.value + 3 > 100:
+		hunger_bar.value = 100
+	else:
+		hunger_bar.value += 3
+
+
+func _on_fly_3_eaten() -> void:
+	Gloabals.flies_eaten += 1
+	flies_eaten_label.text = flies_eaten_label.text + str(Gloabals.flies_eaten)
+	slurp_audio.stream = slurp_sounds[randi_range(0, 3)]
+	slurp_audio.volume_db = -10
+	slurp_audio.play()
+	if hunger_bar.value + 3 > 100:
+		hunger_bar.value = 100
+	else:
+		hunger_bar.value += 3
+
+
+func _on_fly_4_eaten() -> void:
+	Gloabals.flies_eaten += 1
+	flies_eaten_label.text = flies_eaten_label.text + str(Gloabals.flies_eaten)
+	slurp_audio.stream = slurp_sounds[randi_range(0, 3)]
+	slurp_audio.volume_db = -10
+	slurp_audio.play()
+	if hunger_bar.value + 3 > 100:
+		hunger_bar.value = 100
+	else:
+		hunger_bar.value += 3
+
+
+
+func _on_fly_5_eaten() -> void:
+	Gloabals.flies_eaten += 1
+	flies_eaten_label.text = flies_eaten_label.text + str(Gloabals.flies_eaten)
+	slurp_audio.stream = slurp_sounds[randi_range(0, 3)]
+	slurp_audio.volume_db = -10
+	slurp_audio.play()
+	if hunger_bar.value + 3 > 100:
+		hunger_bar.value = 100
+	else:
+		hunger_bar.value += 3
+
+
+func _on_fly_6_eaten() -> void:
+	Gloabals.flies_eaten += 1
+	flies_eaten_label.text = flies_eaten_label.text + str(Gloabals.flies_eaten)
+	slurp_audio.stream = slurp_sounds[randi_range(0, 3)]
+	slurp_audio.volume_db = -10
+	slurp_audio.play()
+	if hunger_bar.value + 3 > 100:
+		hunger_bar.value = 100
+	else:
+		hunger_bar.value += 3
+
+
+func _on_fly_7_eaten() -> void:
+	Gloabals.flies_eaten += 1
+	flies_eaten_label.text = flies_eaten_label.text + str(Gloabals.flies_eaten)
+	slurp_audio.stream = slurp_sounds[randi_range(0, 3)]
+	slurp_audio.volume_db = -10
+	slurp_audio.play()
+	if hunger_bar.value + 3 > 100:
+		hunger_bar.value = 100
+	else:
+		hunger_bar.value += 3
+
+
+func _on_fly_8_eaten() -> void:
+	Gloabals.flies_eaten += 1
+	flies_eaten_label.text = flies_eaten_label.text + str(Gloabals.flies_eaten)
+	slurp_audio.stream = slurp_sounds[randi_range(0, 3)]
+	slurp_audio.volume_db = -10
+	slurp_audio.play()
+	if hunger_bar.value + 3 > 100:
+		hunger_bar.value = 100
+	else:
+		hunger_bar.value += 3
+
+
+func _on_fly_9_eaten() -> void:
+	Gloabals.flies_eaten += 1
+	flies_eaten_label.text = flies_eaten_label.text + str(Gloabals.flies_eaten)
+	slurp_audio.stream = slurp_sounds[randi_range(0, 3)]
+	slurp_audio.volume_db = -10
+	slurp_audio.play()
+	if hunger_bar.value + 3 > 100:
+		hunger_bar.value = 100
+	else:
+		hunger_bar.value += 3
+
+
+func _on_fly_10_eaten() -> void:
+	Gloabals.flies_eaten += 1
+	flies_eaten_label.text = flies_eaten_label.text + str(Gloabals.flies_eaten)
+	slurp_audio.stream = slurp_sounds[randi_range(0, 3)]
+	slurp_audio.volume_db = -10
 	slurp_audio.play()
 	if hunger_bar.value + 3 > 100:
 		hunger_bar.value = 100

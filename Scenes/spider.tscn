@@ -5,12 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://cgxw78s1p337t" path="res://Scenes/UI Scenes/ui.tscn" id="3_rlhom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nywgn"]
-size = Vector2(16, 16)
+size = Vector2(24, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnyni"]
-size = Vector2(32, 32)
+size = Vector2(40, 40)
 
-[node name="Spider" type="CharacterBody2D" node_paths=PackedStringArray("spider_sprite", "hunger_timer", "poison_timer", "hunger_bar", "poison_bar", "slurp_audio")]
+[node name="Spider" type="CharacterBody2D" node_paths=PackedStringArray("spider_sprite", "hunger_timer", "poison_timer", "hunger_bar", "poison_bar", "slurp_audio", "flies_eaten_label") groups=["Player"]]
 top_level = true
 texture_filter = 1
 collision_layer = 3
@@ -21,6 +21,7 @@ poison_timer = NodePath("Poison Timer")
 hunger_bar = NodePath("UI/VBoxContainer/Hunger Bar")
 poison_bar = NodePath("UI/VBoxContainer/Poison Bar")
 slurp_audio = NodePath("Slurp Audio")
+flies_eaten_label = NodePath("UI/Flies Eaten Label")
 speed = 600.0
 
 [node name="Hurt Area" type="Area2D" parent="."]
@@ -32,8 +33,8 @@ shape = SubResource("RectangleShape2D_nywgn")
 shape = SubResource("RectangleShape2D_wnyni")
 
 [node name="Spider Sprite" type="Sprite2D" parent="."]
-position = Vector2(0, 7.15256e-07)
-scale = Vector2(0.18, 0.22)
+position = Vector2(-2.38419e-07, -4.76837e-07)
+scale = Vector2(0.21, 0.27)
 texture = ExtResource("2_4sva2")
 
 [node name="Camera2D" type="Camera2D" parent="."]

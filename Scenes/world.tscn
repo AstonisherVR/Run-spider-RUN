@@ -2,13 +2,12 @@
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_xy4vl"]
 [ext_resource type="PackedScene" uid="uid://bkpt4wyhhxw1l" path="res://Scenes/spider.tscn" id="2_ms3tj"]
-[ext_resource type="PackedScene" uid="uid://bcjbka5ixacfu" path="res://Scenes/fly.tscn" id="3_eueus"]
+[ext_resource type="PackedScene" uid="uid://bcjbka5ixacfu" path="res://Scenes/fly.tscn" id="4_efqtu"]
 [ext_resource type="PackedScene" uid="uid://vospbquhcrju" path="res://Scenes/square_web.tscn" id="4_ojkex"]
 
-[node name="World" type="Node2D" node_paths=PackedStringArray("fly", "spider", "spawn_fly_timer")]
+[node name="World" type="Node2D" node_paths=PackedStringArray("spider", "spawn_fly_timer")]
 texture_filter = 1
 script = ExtResource("1_xy4vl")
-fly = NodePath("Fly")
 spider = NodePath("Spider")
 spawn_fly_timer = NodePath("Spawn Fly Timer")
 
@@ -16,14 +15,57 @@ spawn_fly_timer = NodePath("Spawn Fly Timer")
 
 [node name="Spider" parent="." instance=ExtResource("2_ms3tj")]
 
-[node name="Fly" parent="." instance=ExtResource("3_eueus")]
-position = Vector2(-128, 0)
-
 [node name="Spawn Fly Timer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 3.0
 one_shot = true
 
-[connection signal="eaten" from="Fly" to="Spider" method="_on_fly_eaten"]
-[connection signal="eaten" from="Fly" to="Fly" method="_on_eaten"]
+[node name="Fly" parent="." instance=ExtResource("4_efqtu")]
+position = Vector2(-192, -128)
+
+[node name="Fly7" parent="." instance=ExtResource("4_efqtu")]
+position = Vector2(192, 64)
+
+[node name="Fly6" parent="." instance=ExtResource("4_efqtu")]
+position = Vector2(0, -192)
+
+[node name="Fly5" parent="." instance=ExtResource("4_efqtu")]
+position = Vector2(-128, -256)
+
+[node name="Fly4" parent="." instance=ExtResource("4_efqtu")]
+position = Vector2(-192, 64)
+
+[node name="Fly3" parent="." instance=ExtResource("4_efqtu")]
+position = Vector2(-128, 192)
+
+[node name="Fly2" parent="." instance=ExtResource("4_efqtu")]
+position = Vector2(-320, -128)
+
+[node name="Fly8" parent="." instance=ExtResource("4_efqtu")]
+position = Vector2(128, 0)
+
+[node name="Fly9" parent="." instance=ExtResource("4_efqtu")]
+position = Vector2(64, -128)
+
+[node name="Fly10" parent="." instance=ExtResource("4_efqtu")]
+position = Vector2(0, 128)
+
+[node name="Fly11" parent="." instance=ExtResource("4_efqtu")]
+position = Vector2(192, -128)
+
+[node name="Fly12" parent="." instance=ExtResource("4_efqtu")]
+position = Vector2(-128, 0)
+
 [connection signal="timeout" from="Spawn Fly Timer" to="." method="_on_spawn_fly_timer_timeout"]
+[connection signal="eaten" from="Fly" to="Spider" method="_on_fly_eaten"]
+[connection signal="eaten" from="Fly7" to="Spider" method="_on_fly_7_eaten"]
+[connection signal="eaten" from="Fly6" to="Spider" method="_on_fly_6_eaten"]
+[connection signal="eaten" from="Fly5" to="Spider" method="_on_fly_5_eaten"]
+[connection signal="eaten" from="Fly4" to="Spider" method="_on_fly_4_eaten"]
+[connection signal="eaten" from="Fly3" to="Spider" method="_on_fly_3_eaten"]
+[connection signal="eaten" from="Fly2" to="Spider" method="_on_fly_2_eaten"]
+[connection signal="eaten" from="Fly8" to="Spider" method="_on_fly_8_eaten"]
+[connection signal="eaten" from="Fly9" to="Spider" method="_on_fly_9_eaten"]
+[connection signal="eaten" from="Fly10" to="Spider" method="_on_fly_10_eaten"]
+[connection signal="eaten" from="Fly11" to="." method="_on_fly_11_eaten"]
+[connection signal="eaten" from="Fly12" to="Spider" method="_on_fly_12_eaten"]
